@@ -6,10 +6,9 @@ import os
 load_dotenv()
 
 mongodb_url=os.getenv("MONGODB_URL")
-print(type(mongodb_url))
 
 client = MongoClient(mongodb_url, tlsAllowInvalidCertificates=True)
-print(client)
+
 db = client["ytmanager"]
 video_collection = db["videos"]
 
