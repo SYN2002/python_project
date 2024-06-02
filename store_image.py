@@ -11,7 +11,7 @@ load_dotenv()
 mongodb_url = os.getenv("MONGODB_URL")
 
 try:
-    client = MongoClient(mongodb_url, tlsAllowInvalidCertificates=True)
+    client = MongoClient(mongodb_url)
 except Exception as e:
     f"Esception:{e}"
 db=client["ytmanager"]
@@ -24,7 +24,7 @@ def create_image(path):
     with open(image_path,'rb') as image_file:
         file_id=fs.put(image_file,filename = 'test.jpg')
 
-    print(f"File created !! {file_id}")
+    print(f"File created!! with id: {file_id}")
 
 def show_all_images():
     for image in fs.find():
