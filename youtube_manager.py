@@ -7,7 +7,7 @@ load_dotenv()
 
 mongodb_url=os.getenv("MONGODB_URL")
 
-client = MongoClient(mongodb_url, tlsAllowInvalidCertificates=True)
+client = MongoClient(mongodb_url)
 
 db = client["ytmanager"]
 video_collection = db["videos"]
